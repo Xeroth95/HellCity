@@ -1,12 +1,13 @@
 package start;
 
-import javax.swing.JFrame;
+import gui.MainFrameSingleton;
 
-import GUI.MainFrameSingleton;
+import javax.swing.JFrame;
 
 public class start {
 	public static void main(String[] args) {
 		JFrame mainFrame = MainFrameSingleton.getFrame();
+		mainFrame.setVisible(true);
 		System.out.println("Start the game!");
 	}
 }

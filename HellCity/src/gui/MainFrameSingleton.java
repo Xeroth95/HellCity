@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,6 +25,7 @@ public class MainFrameSingleton {
 			super("HellCity v0.0.1");
 			this.initComponents();
 			this.pack();
+			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 		
 		@Override
@@ -38,7 +39,7 @@ public class MainFrameSingleton {
 			this.contentPane = new JPanel();
 			this.contentPane.setPreferredSize(new java.awt.Dimension(640, 480));
 			this.setContentPane(this.contentPane);
-			this.contentPane.setBackground(new java.awt.Color(255, 255, 255));
+			this.contentPane.setBackground(java.awt.Color.WHITE);
 		}
 	}
 }
