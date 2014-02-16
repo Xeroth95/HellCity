@@ -1,7 +1,13 @@
 package start;
 
+import gui.MainFrameSingleton;
+
+import javax.swing.JFrame;
+
 public class start {
 	public static void main(String[] args) {
-		System.out.println("Start the game!");
+		JFrame mainFrame = MainFrameSingleton.getFrame();
+		mainFrame.setVisible(true);
+		System.out.println("Start the game, please ?! NO!");
 	}
 }
