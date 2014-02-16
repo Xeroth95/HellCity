@@ -3,24 +3,30 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class MainFrameSingleton {
+public class MainFrame {
 	private final static Object o = new Object();
-	private static MainFrame main;
+	private static MainFrameSingleton main;
 	
 	
-	public static MainFrame getFrame() {
+	public static JFrame getMainFrame() {
 		synchronized(o) {
 			if (main == null) {
-				main = new MainFrame();
+				main = new MainFrameSingleton();
 			}
 			return main;
 		}
 	}
 	
-	public static class MainFrame extends JFrame {
+	public static void setCurrentFrame(JPanel contentPane) {
+		assert (main != null) : "Mainframe was not initialized!";
+		main.switchContentPane(contentPane);
+	}
+	
+	private static class MainFrameSingleton extends JFrame {
+		private static final long	serialVersionUID	= 1218619392791954880L;
 		JPanel contentPane;
 		
-		private MainFrame() {
+		private MainFrameSingleton() {
 			// TODO: implement the main frame
 			super("HellCity v0.0.1");
 			this.initComponents();
@@ -40,6 +46,12 @@ public class MainFrameSingleton {
 			this.contentPane.setPreferredSize(new java.awt.Dimension(640, 480));
 			this.setContentPane(this.contentPane);
 			this.contentPane.setBackground(java.awt.Color.WHITE);
+		}
+		
+		public void switchContentPane(JPanel contentPane) {
+			this.contentPane = contentPane;
+			this.setContentPane(this.contentPane);
+			this.pack();
 		}
 	}
 }
