@@ -8,6 +8,11 @@ import static util.ErrorFactory.produceError;
  * @author mint
  *
  */
+
+
+//heeeyyy macaroni
+
+
 public abstract class GameObject {
 	private static long currentId = 0;
 	private long id = generateId();
