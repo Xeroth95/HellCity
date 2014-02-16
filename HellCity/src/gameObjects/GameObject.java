@@ -14,7 +14,7 @@ import static util.ErrorFactory.produceError;
 
 
 /*
- * peperoi macaroni?
+ * pepperoni macaroni?
  */
 
 public abstract class GameObject {
