@@ -13,6 +13,10 @@ import static util.ErrorFactory.produceError;
 //heeeyyy macaroni
 
 
+/*
+ * peperoi macaroni?
+ */
+
 public abstract class GameObject {
 	private static long currentId = 0;
 	private long id = generateId();
